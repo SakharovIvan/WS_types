@@ -24,3 +24,12 @@ export interface Token_Schema{
   
     refreshToken: string;
 }
+export enum AUTH_ROUTES {
+  MAIN = '/api/auth',
+  REGISTRATION = '/registration',
+  LOGIN = '/login',
+  LOGOUT = '/logout',
+  ACTIVATION_LINK = '/activate',
+  REFRESH_TOKEN = '/refresh',
+  GET_USERS = '/users',
+}
