@@ -3,8 +3,10 @@ export interface Valid_User {
   email: string;
   user: string;
 }
+
 export interface UserModel {
   id: string;
+  name: string;
   email: string;
   password: string;
   isActivated: boolean;
