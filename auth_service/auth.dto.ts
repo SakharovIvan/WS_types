@@ -19,3 +19,4 @@ export class UpdateUserDto {
   readonly isActivated: boolean | null;
   readonly activationLink: string | null;
 }
+
