@@ -1,3 +1,5 @@
+import { Material_No_types } from '../catalogue/Mat_No';
+
 export interface Customer {
   id: string;
   name: string;
@@ -14,14 +16,30 @@ export interface Contacts {
   telephone: string | null;
 }
 
-export interface Discounts {}
+export interface Discounts {
+  id: string;
+  customer_id: string;
+  contract_id: string;
+  closed: boolean;
+  name: string | null;
+  Material_No_type: Material_No_types;
+  discount: number;
+}
 
-export interface Contracts {}
+export interface Contracts {
+  id: string;
+  closed: boolean;
+  name: string | null;
+  date: Date;
+  close_date: Date;
+}
 
 export interface Address {
   id: string;
-  city: string;
+  city_id: string;
   type: Address_types;
+  address: string;
+  indeks;
 }
 
 export interface Cities {
@@ -30,8 +48,8 @@ export interface Cities {
   region: string;
 }
 
-export interface Address_types {
-  Legal;
-  Delivery;
-  Fact;
+export enum Address_types {
+  Legal,
+  Delivery,
+  Fact,
 }
