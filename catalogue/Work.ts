@@ -7,3 +7,10 @@ export interface Work {
   tags: string[];
   notes: string | null;
 }
+
+export interface Tool_Work {
+  work_id: string;
+  mat_no_id: string;
+  time: string | null;
+  price: number | null;
+}
