@@ -1,6 +1,11 @@
-export interface Repair_type {
+export interface Repair_Main_type {
   id: string;
   type: string;
+
+  tool_id: string;
+  purchaser_id: string;
+  seller_id: string;
+  user_id: string;
 
   accepted: Date;
   diagnosed: Date | null;
@@ -12,8 +17,20 @@ export interface Repair_type {
   approval_out: Date | null;
   completed: Date | null;
   issued: Date | null;
+
   createdAt: Date;
   updatedAt: Date;
+}
+
+export enum Repair_dates {
+  accepted,
+  diagnosed,
+  pending_in,
+  pending_out,
+  approval_in,
+  approval_out,
+  completed,
+  issued,
 }
 
 export interface Repair_Mat_No {
