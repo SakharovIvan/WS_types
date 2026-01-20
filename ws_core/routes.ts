@@ -8,13 +8,3 @@ export enum REPAIR_ROUTES {
   PASSWORD_RESET = '/resetpassword',
   USERS = '/users',
 }
-
-export enum REPAIR_CMD {
-  registration = 'registration',
-  login = 'login',
-  logout = 'logout',
-  refresh = 'refresh',
-  activate = 'activate',
-  resetpassword = 'resetpassword',
-  users = 'users',
-}

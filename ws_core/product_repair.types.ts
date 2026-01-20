@@ -1,3 +1,5 @@
+import { Repair_Main_type } from './repair.types';
+
 export interface Tool {
   id: string;
   Mat_no_id: string;
@@ -6,23 +8,34 @@ export interface Tool {
   checked: boolean;
   purchase: Date;
   manufacture: Date;
-  Purchaser_id: string;
-  seller_id: string;
+  //repairs: Repair_Main_type[];
+  purchaser: Purchaser;
+  seller: Seller;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface Purchaser {
   id: string;
   name: string;
-  tlf: string | null;
-  address: string | null;
-  notes: string | null;
+  tlf?: string;
+  address?: string;
+  user_id: string;
+  inn: string;
+  //tools: Tool[];
+  notes?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface Seller {
   id: string;
   name: string;
-  c1_code: string | null;
-  inn: string | null;
-  tlf: string | null;
+  //tools: Tool[];
+  c1_code?: string;
+  inn?: string;
+  tlf?: string;
   person: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }

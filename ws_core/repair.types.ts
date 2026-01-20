@@ -1,25 +1,29 @@
+import { Purchaser, Seller, Tool } from './product_repair.types';
+
 export interface Repair_Main_type {
   id: string;
-  type: string;
+  type: Repair_types;
 
-  tool_id: string;
-  purchaser_id: string;
-  seller_id: string;
+  code: string;
   user_id: string;
-
+  tool: Tool;
+  //purchaser: Purchaser;
+  parts: Repair_Mat_No[];
+  works: Repair_Work[];
   accepted: Date;
-  diagnosed: Date | null;
-  pending: boolean;
-  pending_in: Date | null;
-  pending_out: Date | null;
-  apprvoal: boolean;
-  approval_in: Date | null;
-  approval_out: Date | null;
-  completed: Date | null;
-  issued: Date | null;
+  diagnosed?: Date;
+  pending?: boolean;
+  pending_in?: Date;
+  pending_out?: Date;
+  apprvoal?: boolean;
+  approval_in?: Date;
+  approval_out?: Date;
+  completed?: Date;
+  issued?: Date;
+  visible?: boolean;
 
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export enum Repair_dates {
@@ -34,25 +38,30 @@ export enum Repair_dates {
 }
 
 export interface Repair_Mat_No {
-  repair_id: string;
+  //repair: Repair_Main_type;
   mat_No_id;
   qty: number;
   price: number;
-  approved: boolean;
-  used: boolean;
+  approved?: boolean;
+  used?: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface Repair_Work {
-  repair_id: string;
+  repair: Repair_Main_type;
   work_id: string;
 }
 
 export interface Repair_types {
-  id: string;
+  id?: string;
   name: string;
+  //repairs: Repair_Main_type[];
   sp: boolean;
   work: boolean;
-  options: number | null;
+  options: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface Repair_options {}
