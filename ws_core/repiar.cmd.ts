@@ -3,6 +3,7 @@ export enum WS_CMD {
   update_repair,
   delete_repair,
   get_repair_list,
+  repair_sample,
 }
 
 export interface WS_fuctions {
