@@ -1,16 +1,23 @@
+import { Material_No } from "./Mat_No";
+
 export interface Work {
   id: string;
   name: string;
-  chars: string | null;
-  price: number | null;
-  time: number | null;
+  chars: string;
+  price: number ;
+  time: number ;
   tags: string[];
-  notes: string | null;
+  notes: string ;
+}
+
+export interface Product_Work{
+  id:string;
+  product:Material_No
 }
 
 export interface Tool_Work {
-  work_id: string;
-  mat_no_id: string;
-  time: string | null;
-  price: number | null;
+  work: Work;
+  mat_no: Material_No;
+  time: string ;
+  price: number ;
 }
