@@ -1,23 +1,23 @@
-import { Material_No } from "./Mat_No";
+import { Material_No } from './Mat_No';
+import { Product } from './Product';
 
 export interface Work {
   id: string;
   name: string;
   chars: string;
-  price: number ;
-  time: number ;
   tags: string[];
-  notes: string ;
+  notes: string;
 }
 
-export interface Product_Work{
-  id:string;
-  product:Material_No
-}
-
-export interface Tool_Work {
+export interface Product_Work {
+  id: string;
   work: Work;
-  mat_no: Material_No;
-  time: string ;
-  price: number ;
+  product: Product;
+  time: string;
+  price: number;
+}
+
+export interface Tool_Work_List {
+  product: Product;
+  works: Tool_Work_List[];
 }
