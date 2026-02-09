@@ -1,5 +1,3 @@
-import { Tool_Work_List } from './Work';
-
 export interface Material_No {
   id: string;
   mat_no: string;
@@ -7,7 +5,10 @@ export interface Material_No {
   chars: string;
   price: number;
   tags: string[];
-  notes?: string;
+  warehouseqty: number;
+  warehousestatus: WAREHOUSE_STATUS;
+  c1name: string;
+  notes: string;
   type: Material_No_types;
 }
 
@@ -22,4 +23,10 @@ export interface Mat_No_Analog {
   mat_no: Material_No;
   analog: Material_No;
   percentage: number;
+}
+
+export enum WAREHOUSE_STATUS {
+  empty,
+  way,
+  stock,
 }
