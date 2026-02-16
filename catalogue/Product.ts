@@ -37,6 +37,20 @@ export interface Product_Work {
 export interface Product_update {
   product: string;
   type: number;
-  sp_mat_no_list: { sp_mat_no: string; qty: number }[];
-  work_list: { code: number; time?: number; price?: number }[];
+  sp_mat_no_list?: { sp_mat_no: string; qty: number }[];
+  work_list?: { code: number; time?: number; price?: number }[];
+}
+
+export interface Product_update_result extends Product_update {
+  error_List:
+    | {
+        sp_mat_no_list: { sp_mat_no: string; qty: number; message: string }[];
+        work_list: {
+          code: number;
+          time?: number;
+          price?: number;
+          message: string;
+        }[];
+      }
+    | {};
 }

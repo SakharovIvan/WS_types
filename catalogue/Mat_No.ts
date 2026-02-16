@@ -13,6 +13,7 @@ export interface Material_No {
 }
 
 export enum Material_No_types {
+  Later,
   Spare_part,
   Product,
   Accessories,
