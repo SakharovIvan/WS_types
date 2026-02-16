@@ -9,6 +9,7 @@ export enum CATALOGUE {
   PRODUCT_TYPE,
   PRODUCT_MAT_NO,
   SCHEME,
+  WORK,
 }
 
 export enum CRUD {
