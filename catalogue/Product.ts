@@ -3,8 +3,8 @@ import { Tool_Work_List, Work } from './Work';
 
 export interface Product {
   id: string;
-  product: string;
-  type: number;
+  product: string; //Material_No.mat_no
+  type: number; // Product_Type.code
 }
 
 export interface Product_Mat_No {
@@ -20,9 +20,9 @@ export interface Product_Type {
   name: string;
 }
 
-export interface Scheme_data extends Tool_Work_List {
-  sp_mat_no_list: Product_Mat_No[];
-
+export interface Scheme_data {
+  sp_mat_no_list: Product_Mat_No[] | null;
+  works: Product_Work[] | null;
   attachment?: [];
 }
 
@@ -36,7 +36,7 @@ export interface Product_Work {
 
 export interface Product_update {
   product: string;
-  type: number;
+  type?: number;
   sp_mat_no_list?: { sp_mat_no: string; qty: number }[];
   work_list?: { code: number; time?: number; price?: number }[];
 }
@@ -54,3 +54,8 @@ export interface Product_update_result extends Product_update {
       }
     | {};
 }
+
+export const undefined_type: Omit<Product_Type, 'id'> = {
+  code: 1,
+  name: 'Тип не опрделен',
+};
