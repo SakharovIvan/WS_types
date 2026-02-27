@@ -37,9 +37,9 @@ export interface material_commands {
   material_full_update(data: Partial<Material_No>[]): Promise<void>;
   material_upsert(data: Partial<Material_No>[]): Promise<void>;
   get_material(data: Partial<Material_No>): Promise<Material_No>;
-  search_material(daata: string): Promise<Material_No>;
+  search_material(daata: string): Promise<Material_No[] | []>;
 
-  get_analogue(data: Partial<Material_No>): Promise<Mat_No_Analog>;
+  get_analogue(data: Partial<Material_No>): Promise<Mat_No_Analog[] | []>;
   analogue_full_update(data: Partial<Mat_No_Analog>): Promise<void>;
   analogue_upsert(data: Partial<Mat_No_Analog>): Promise<void>;
 }
@@ -49,7 +49,6 @@ export interface product_commands {
   upsert_product_types(data: Partial<Product_Type>[]): Promise<void>;
   delete_product_types(data: Pick<Product_Type, 'code'>[]): Promise<void>;
   get_product_types(): Promise<Product_Type[]>;
-
   set_Product_data(
     data: Product_update,
   ): Promise<Pick<Product_update_result, 'error_List'>>;

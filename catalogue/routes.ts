@@ -7,4 +7,5 @@ export enum CATALOGUE_ROUTES {
   PRODUCT_TYPE = '/product_type',
   PRODUCT_MAT_NO = '/product_mat_no',
   SCHEME = '/scheme',
+  WORK = '/work',
 }
