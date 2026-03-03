@@ -1,5 +1,6 @@
+import { get } from 'axios';
 import { Purchaser, Seller, Tool } from './product_repair.types';
-import { Repair_Main_type } from './repair.types';
+import { Repair_Main_type, Repair_types } from './repair.types';
 
 export enum WS_CMD {
   create_new,
@@ -11,6 +12,9 @@ export enum WS_CMD {
   nomenclature_upsert_purchaser,
   nomenclature_get_sellers,
   nomenclature_upsert_seller,
+  tool_create,
+  tool_search_upsert,
+  tool_update,
 }
 
 export interface WS_REPAIR_FUNC {
@@ -32,4 +36,18 @@ export interface WS_TOOL_FUNC {
   create(data: Partial<Tool>): Promise<Tool>;
   search(data: Partial<Tool>, create?: boolean): Promise<Tool[] | null>;
   update(data: { current_tool_id: string, data: Partial<Tool> })
+}
+
+export interface WS_REPAIR_TYPE_FUNC {
+  getTypes(): Promise<Repair_types[]>
+  findType(data: Partial<Repair_types>): Promise<Repair_types>
+  createType(data: Omit<Repair_types,'id'>): Promise<void>
+}
+
+
+export interface WS_CORE_ClientProxy {
+  send(pattern: WS_CMD, simulation: any): any;
+  connect(): any;
+  close(): any;
+  routingMap(): any;
 }
