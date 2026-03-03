@@ -2,7 +2,7 @@ import { Repair_Main_type } from './repair.types';
 
 export interface Tool {
   id: string;
-  Mat_no_id: string;
+  Mat_no: string;
   serial_number: string;
   serial_number_extra: string;
   checked: boolean;
@@ -11,8 +11,8 @@ export interface Tool {
   //repairs: Repair_Main_type[];
   purchaser: Purchaser;
   seller: Seller;
-  createdAt: Date;
-  updatedAt: Date;
+  updatedAt?: Date;
+  createdAt?: Date;
 }
 
 export interface Purchaser {
