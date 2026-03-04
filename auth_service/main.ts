@@ -1,5 +1,5 @@
-export interface user_registration_form{
-    email: string;
+export interface user_registration_form {
+  email: string;
   password: string;
 }
 export interface Valid_User {
@@ -8,7 +8,7 @@ export interface Valid_User {
   user: string;
 }
 
-export interface UserModel extends user_registration_form{
+export interface UserModel extends user_registration_form {
   id: string;
   name: string;
   isActivated: boolean;
@@ -40,6 +40,7 @@ export enum AUTH_CMD {
   activate = 'activate',
   resetpassword = 'resetpassword',
   users = 'users',
+  validate = 'validate',
 }
 export interface JWTPayload {
   email: string;
@@ -49,4 +50,3 @@ export interface AuthTokens {
   refreshToken: string;
   accessToken: string;
 }
-
