@@ -47,6 +47,13 @@ export interface WS_REPAIR_TYPE_FUNC {
   createType(data: Omit<Repair_types, 'id'>): Promise<void>;
 }
 
+export interface WS_CORE_FUNCs
+  extends
+    WS_REPAIR_FUNC,
+    WS_NOMENCLATURE_FUNC,
+    WS_TOOL_FUNC,
+    WS_REPAIR_TYPE_FUNC {}
+
 export interface WS_CORE_ClientProxy {
   send(pattern: WS_CMD, simulation: any): any;
   connect(): any;
