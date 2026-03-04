@@ -1,4 +1,4 @@
-import { Purchaser, Seller, Tool } from './product_repair.types';
+import { type Purchaser, type Seller, type Tool } from './product_repair.types';
 
 export interface Repair_Main_type {
   id: string;
@@ -39,7 +39,7 @@ export enum Repair_dates {
 
 export interface Repair_Mat_No {
   //repair: Repair_Main_type;
-  mat_No_id;
+  mat_No_id: string;
   qty: number;
   price: number;
   approved?: boolean;

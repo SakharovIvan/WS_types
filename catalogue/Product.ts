@@ -1,5 +1,3 @@
-import { Material_No } from './Mat_No';
-import { Tool_Work_List, Work } from './Work';
 
 export interface Product {
   id: string;

@@ -1,4 +1,4 @@
-import { Repair_Main_type } from './repair.types';
+import {type  Repair_Main_type } from './repair.types';
 
 export interface Tool {
   id: string;
