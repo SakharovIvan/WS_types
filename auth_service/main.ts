@@ -21,6 +21,16 @@ export interface Token_Schema {
   user: string;
   refreshToken: string;
 }
+
+export interface Role{
+  id: string;
+  user:UserModel
+  role: string;
+  isadmin:boolean
+  createdAt: Date;
+  updatedAt:Date;
+}
+
 export enum AUTH_ROUTES {
   MAIN = '/api/auth',
   SIGN_UP = '/registration',
