@@ -40,6 +40,7 @@ export enum AUTH_ROUTES {
   ACTIVATION_LINK = '/activate',
   PASSWORD_RESET = '/resetpassword',
   USERS = '/users',
+  ROLE = '/role',
 }
 
 export enum AUTH_CMD {
