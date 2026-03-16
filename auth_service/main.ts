@@ -22,13 +22,13 @@ export interface Token_Schema {
   refreshToken: string;
 }
 
-export interface Role{
+export interface Role {
   id: string;
-  user:UserModel
+  user: UserModel;
   role: string;
-  isadmin:boolean
+  isadmin: boolean;
   createdAt: Date;
-  updatedAt:Date;
+  updatedAt: Date;
 }
 
 export enum AUTH_ROUTES {
@@ -51,12 +51,25 @@ export enum AUTH_CMD {
   resetpassword = 'resetpassword',
   users = 'users',
   validate = 'validate',
+  role_list = 'role_list',
+  change_role = 'change_role',
+  validate_role = 'validate_role',
+  get_Role = 'get_Role',
 }
+
 export interface JWTPayload {
   email: string;
   sub: string;
 }
+
 export interface AuthTokens {
   refreshToken: string;
   accessToken: string;
+}
+
+export interface ROLE_FUNC {
+  role_list(data: {}): Promise<Role[]>;
+  change_role(data: { role: Role }): Promise<void>;
+  validate_role(data: { user: Valid_User }): Promise<Role>;
+  get_Role(data: { user: UserModel }): Promise<Role>;
 }
