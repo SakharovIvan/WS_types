@@ -1,8 +1,15 @@
+import type { Material_No } from "./Mat_No";
 
 export interface Product {
   id: string;
   product: string; //Material_No.mat_no
   type: number; // Product_Type.code
+}
+
+export interface Product_with_data {
+  id: string;
+  product: Material_No; //Material_No.mat_no
+  type: Product_Type; // Product_Type.code
 }
 
 export interface Product_Mat_No {
