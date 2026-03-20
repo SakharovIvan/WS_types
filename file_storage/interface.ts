@@ -19,3 +19,10 @@ export enum FILE_STORAGE_CMDS {
   upload_file,
   delete_file,
 }
+
+export enum FILE_STORAGE_ROUTES {
+  MAIN = 'api/file_storage',
+  BUCKET = 'bucket',
+  BUCKETS = 'buckets',
+  FILE = 'file',
+}
