@@ -1,4 +1,4 @@
-import { Bucket, BufferedFile, File } from './types';
+import type { Bucket, BufferedFile, File } from './types';
 
 export interface Bucket_func {
   create_bucket(data: Bucket): Promise<void>;
