@@ -5,7 +5,8 @@ export enum Customer_CMDs {
     Create,
     Patch,
     Get,
-    Get_List
+    Get_List,
+    Set_user
 }
 
 export interface Customer_funcs {
