@@ -1,5 +1,10 @@
 import { Material_No_types } from '../catalogue/Mat_No';
 
+export interface User_Customer {
+  user_id: string;
+  customer:Customer
+}
+
 export interface Customer {
   id: string;
   name: string;
