@@ -6,6 +6,11 @@ export interface Customer {
   c1_code: string | null;
   inn: string;
   kpp: string | null;
+  contacts: Contacts[];
+  discounts: Discounts[];
+  contracts: Contracts[];
+  address: Address[];
+
 }
 
 export interface Contacts {
@@ -14,12 +19,13 @@ export interface Contacts {
   name: string;
   notes: string | null;
   telephone: string | null;
+  customer: Customer;
 }
 
 export interface Discounts {
   id: string;
-  customer_id: string;
-  contract_id: string;
+  customer: Customer;
+  contract: Contracts;
   closed: boolean;
   name: string | null;
   Material_No_type: Material_No_types;
@@ -28,6 +34,8 @@ export interface Discounts {
 
 export interface Contracts {
   id: string;
+  customer: Customer;
+  discount: Discounts[];
   closed: boolean;
   name: string | null;
   date: Date;
@@ -36,10 +44,11 @@ export interface Contracts {
 
 export interface Address {
   id: string;
-  city_id: string;
+  postal_code: string;
+  city: string;
   type: Address_types;
   address: string;
-  indeks;
+  customer: Customer;
 }
 
 export interface Cities {
