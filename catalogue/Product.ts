@@ -1,9 +1,10 @@
-import type { Material_No } from "./Mat_No";
+import type { Material_No } from './Mat_No';
+import { Work } from './Work';
 
 export interface Product {
   id: string;
-  product: string; //Material_No.mat_no
-  type: number; // Product_Type.code
+  product: Material_No; //Material_No.mat_no
+  type: Product_Type; // Product_Type.code
 }
 
 export interface Product_with_data {
@@ -14,8 +15,8 @@ export interface Product_with_data {
 
 export interface Product_Mat_No {
   id: string;
-  product: string;
-  sp_mat_no: string;
+  product: Product;
+  sp_mat_no: Material_No;
   qty: number;
 }
 
@@ -33,8 +34,8 @@ export interface Scheme_data {
 
 export interface Product_Work {
   id: string;
-  work: number;
-  product: string;
+  work: Work;
+  product: Product;
   time: number;
   price: number;
 }
