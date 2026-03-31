@@ -1,5 +1,5 @@
 import type { Material_No } from './Mat_No';
-import { Work } from './Work';
+import type { Work } from './Work';
 
 export interface Product {
   id: string;
