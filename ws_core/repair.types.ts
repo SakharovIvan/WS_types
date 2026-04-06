@@ -1,4 +1,4 @@
-import { type Purchaser, type Seller, type Tool } from './product_repair.types';
+import { type Tool } from './product_repair.types';
 
 export interface Repair_Main_type {
   id: string;
