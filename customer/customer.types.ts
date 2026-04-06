@@ -2,20 +2,19 @@ import { Material_No_types } from '../catalogue/Mat_No';
 
 export interface User_Customer {
   user_id: string;
-  customer:Customer
+  customer: Customer;
 }
 
 export interface Customer {
   id: string;
   name: string;
-  c1_code: string | null;
+  c1code: string | null;
   inn: string;
   kpp: string | null;
   contacts: Contacts[];
   discounts: Discounts[];
   contracts: Contracts[];
   address: Address[];
-
 }
 
 export interface Contacts {
