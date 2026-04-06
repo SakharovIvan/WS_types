@@ -17,7 +17,7 @@ export interface Customer_funcs {
   set_user(data: { user_id: string; Customer_id: string }): Promise<void>;
 }
 
-export enum CUSOMER_ROUTES {
+export enum CUSTOMER_ROUTES {
   MAIN = '/api/customer',
   LIST = '/list',
 }
