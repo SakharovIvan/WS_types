@@ -1,5 +1,5 @@
-import { Valid_User } from '../auth_service/main';
-import { Customer } from './customer.types';
+import type { Valid_User } from '../auth_service/main';
+import type { Customer } from './customer.types';
 
 export enum Customer_CMDs {
   Create,

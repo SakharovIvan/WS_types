@@ -13,10 +13,10 @@ export interface Material_No {
 }
 
 export enum Material_No_types {
-  Later,
-  Spare_part,
-  Product,
-  Accessories,
+  Later="Позже",
+  Spare_part="Запчасти",
+  Product="Продукт",
+  Accessories="Оснастка",
 }
 
 export interface Mat_No_Analog {
@@ -31,3 +31,5 @@ export enum WAREHOUSE_STATUS {
   way,
   stock,
 }
+
+export const Material_No_types_object = Object.values(Material_No_types) 

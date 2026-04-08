@@ -62,7 +62,9 @@ export interface Cities {
 }
 
 export enum Address_types {
-  Legal,
-  Delivery,
-  Fact,
+  Legal="Юридическая информация",
+  Delivery="Доставка",
+  Fact="Факт",
 }
+
+export const Address_types_object = Object.values(Address_types)
