@@ -37,6 +37,28 @@ export enum Repair_dates {
   issued,
 }
 
+export interface Repair_dates_filter  {
+  accepted_start:Date,
+  accepted_end:Date
+  diagnosed_start:Date,
+  diagnosed_end:Date
+  pending_in_start:Date,
+  pending_in_end:Date
+  pending_out_start:Date,
+  pending_out_end:Date
+  approval_in_start:Date,
+  approval_in_end:Date
+  approval_out_start:Date,
+  approval_out_end:Date
+  completed_start:Date,
+  completed_end:Date
+  issued_start:Date,
+  issued_end:Date
+}
+
+export interface Repair_Main_type_filter extends Repair_Main_type ,Repair_dates_filter{
+
+}
 export interface Repair_Mat_No {
   //repair: Repair_Main_type;
   mat_No_id: string;
