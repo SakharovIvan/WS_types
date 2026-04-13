@@ -1,6 +1,8 @@
 export interface user_registration_form {
   email: string;
   password: string;
+  inn: string;
+  name: string;
 }
 export interface Valid_User {
   id: string;
