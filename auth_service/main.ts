@@ -54,6 +54,7 @@ export enum AUTH_CMD {
   resetpassword = 'resetpassword',
   users = 'users',
   validate = 'validate',
+  validate_user_model = 'validate_user_model',
   role_list = 'role_list',
   change_role = 'change_role',
   validate_role = 'validate_role',
