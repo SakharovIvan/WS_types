@@ -7,6 +7,7 @@ export enum WS_CMD {
   delete_repair,
   get_repair_list,
   repair_sample,
+  get_repair_data,
   nomenclature_get_purchasers,
   nomenclature_upsert_purchaser,
   nomenclature_get_sellers,
