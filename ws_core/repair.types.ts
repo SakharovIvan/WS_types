@@ -8,8 +8,8 @@ export interface Repair_Main_type {
   user_id: string;
   tool: Tool;
   //purchaser: Purchaser;
-  parts: Repair_Mat_No[];
-  works: Repair_Work[];
+  parts?: Repair_Mat_No[];
+  works?: Repair_Work[];
   accepted: Date;
   diagnosed?: Date;
   pending?: boolean;
@@ -59,8 +59,8 @@ export interface Repair_dates_filter  {
 export interface Repair_Main_type_filter extends Repair_Main_type ,Repair_dates_filter{
 
 }
+
 export interface Repair_Mat_No {
-  //repair: Repair_Main_type;
   mat_No_id: string;
   qty: number;
   price: number;
@@ -73,6 +73,7 @@ export interface Repair_Mat_No {
 export interface Repair_Work {
   repair: Repair_Main_type;
   work_id: string;
+  price: number;
 }
 
 export interface Repair_types {
