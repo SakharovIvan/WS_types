@@ -13,10 +13,13 @@ export type Bucket = {
 
 export type description = 'product' | 'repair' | 'chat';
 
+export type file_types = 'pdf' | 'png' | 'jpg' | 'document';
 export type File = {
   id: string;
   url: string;
   name: string;
+  main: boolean;
+  type: file_types | string;
   bucket: Bucket;
   createdAt: Date;
   updatedAt: Date;
