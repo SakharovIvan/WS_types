@@ -16,7 +16,7 @@ export interface Customer {
   contracts: Contracts[];
   address: Address[];
   bank_account: Customer_Bank_Account
-  work_price: Custoemr_Work_price
+  work_price: Customer_Work_price
 }
 
 export interface Contacts {
@@ -78,7 +78,7 @@ export interface Customer_Bank_Account {
   correspondent_account: string;
   notes: string;
 }
-export interface Custoemr_Work_price {
+export interface Customer_Work_price {
   id: string;
   customer: Customer;
   price: number;
