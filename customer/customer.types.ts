@@ -15,6 +15,8 @@ export interface Customer {
   discounts: Discounts[];
   contracts: Contracts[];
   address: Address[];
+  bank_account: Customer_Bank_Account
+  work_price: Custoemr_Work_price
 }
 
 export interface Contacts {
@@ -65,6 +67,21 @@ export enum Address_types {
   Legal="Юридическая информация",
   Delivery="Доставка",
   Fact="Факт",
+}
+
+export interface Customer_Bank_Account {
+  id: string;
+  customer: Customer;
+  bank_name: string;
+  bik_code: string;
+  account_number: string;
+  correspondent_account: string;
+  notes: string;
+}
+export interface Custoemr_Work_price {
+  id: string;
+  customer: Customer;
+  price: number;
 }
 
 export const Address_types_object = Object.values(Address_types)
