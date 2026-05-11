@@ -3,7 +3,7 @@ import { type Tool } from './product_repair.types';
 export interface Repair_Main_type {
   id: string;
   type: Repair_types;
-
+  customer_id: string;
   code: string;
   user_id: string;
   tool: Tool;
@@ -38,22 +38,22 @@ export enum Repair_dates {
 }
 
 export interface Repair_dates_filter {
-  accepted_start: Date;
-  accepted_end: Date;
-  diagnosed_start: Date;
-  diagnosed_end: Date;
-  pending_in_start: Date;
-  pending_in_end: Date;
-  pending_out_start: Date;
-  pending_out_end: Date;
-  approval_in_start: Date;
-  approval_in_end: Date;
-  approval_out_start: Date;
-  approval_out_end: Date;
-  completed_start: Date;
-  completed_end: Date;
-  issued_start: Date;
-  issued_end: Date;
+  accepted_start: Date | null;
+  accepted_end: Date | null;
+  diagnosed_start: Date | null;
+  diagnosed_end: Date | null;
+  pending_in_start: Date | null;
+  pending_in_end: Date | null;
+  pending_out_start: Date | null;
+  pending_out_end: Date | null;
+  approval_in_start: Date | null;
+  approval_in_end: Date | null;
+  approval_out_start: Date | null;
+  approval_out_end: Date | null;
+  completed_start: Date | null;
+  completed_end: Date | null;
+  issued_start: Date | null;
+  issued_end: Date | null;
 }
 
 export interface Repair_Main_type_filter
