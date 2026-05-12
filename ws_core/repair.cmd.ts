@@ -18,6 +18,10 @@ export enum WS_CMD {
   get_types,
   find_type,
   create_type,
+
+  close_period,
+  open_period,
+  get_periods,
 }
 
 export interface WS_REPAIR_FUNC {

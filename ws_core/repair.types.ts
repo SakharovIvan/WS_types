@@ -22,6 +22,8 @@ export interface Repair_Main_type {
   issued?: Date;
   visible?: boolean;
 
+  closed?: boolean;
+  closedAt?: Date;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -87,3 +89,38 @@ export interface Repair_types {
 }
 
 export interface Repair_options {}
+
+export interface Repair_Period {
+  id: string;
+  repairs: Repair_Main_type[];
+  date: Date;
+  period: string;
+
+  //what_asc
+  customer_id: string;
+  //main qty
+  work_qty: number;
+  mat_no_qty: number;
+  repairs_qty: number;
+  //sum main
+  work_sum: number;
+  mat_no_sum: number;
+  sum: number;
+  // NDS
+  nds: number;
+  // sum NDS
+  work_sum_nds: number;
+  mat_no_sum_nds: number;
+  sum_nds: number;
+  //sum WO NDS
+  work_sum_wo_nds: number;
+  mat_no_sum_wo_nds: number;
+  sum_wo_nds: number;
+
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export enum BUH {
+  NDS = 0.22,
+}
