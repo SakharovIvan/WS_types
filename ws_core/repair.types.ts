@@ -1,3 +1,4 @@
+import { Customer_Info } from 'lib/B2B_types/common/client.types';
 import { type Tool } from './product_repair.types';
 
 export interface Repair_Main_type {
@@ -21,7 +22,7 @@ export interface Repair_Main_type {
   completed?: Date;
   issued?: Date;
   visible?: boolean;
-
+  customer_JSON?: Customer_Info;
   closed?: boolean;
   closedAt?: Date;
   createdAt?: Date;
