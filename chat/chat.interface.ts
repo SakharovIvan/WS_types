@@ -1,38 +1,46 @@
-import { Role, Valid_User } from "../auth_service/main"
+import { Role, Valid_User } from '../auth_service/main';
+export enum MESSAGE_TYPE {
+  DEFAULT,
+  SYSTEM_INFO,
+  DANGER,
+  WARNING,
+  SUCCESS,
+}
 
 export interface Message {
-    id: string
-    text: string
-    userid: string
-    username: string
-    isRead: boolean
-    isAdmin: boolean
-    chat: Chat
-    createdAt: Date
-    updatedAt: Date
+  id: string;
+  text: string;
+  userid: string;
+  username: string;
+  type: MESSAGE_TYPE;
+  isRead: boolean;
+  isAdmin: boolean;
+  chat: Chat;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface Chat {
-    id: string
-    path: string
-    messages: Message[]
-    createdAt: Date
-    updatedAt: Date
+  id: string;
+  path: string;
+  messages: Message[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export class MessageDTO {
-    text: string
-    userid: string
-    username: string
-    isRead: boolean
-    isAdmin: boolean
-    chat: Chat
-    constructor(data:any, user:Valid_User,role:Role) {
-        this.chat = data.chat
-        this.text = data.text
-        this.isRead = data.isRead
-        this.userid = user.id
-        this.username = user.email
-        this.isAdmin = role.isadmin
-    }
+  text: string;
+  userid: string;
+  username: string;
+  isRead: boolean;
+  isAdmin: boolean;
+  chat: Chat;
+  constructor(data: any, user: Valid_User, role: Role) {
+    this.chat = data.chat;
+    this.text = data.text;
+    this.isRead = data.isRead;
+    this.userid = user.id;
+    this.username = user.email;
+    this.isAdmin = role.isadmin;
+  }
 }
