@@ -1,6 +1,86 @@
-import { Customer_Info } from 'lib/B2B_types/common/client.types';
-import { type Tool } from './product_repair.types';
+export enum SPMATNO_TYPES {
+  UNDEFINED,
+  SPARE_PART,
+  TOOL,
+  ACCESSORY,
+}
 
+export interface Customer_LegalInfo {
+  id?: string;
+  gis_code: number;
+  C1_code: string;
+  organization_name: string;
+  organization_INN: string;
+  DSO_region: number;
+  CliInfo_ID?: string;
+  KPP: string;
+  closed: boolean;
+  updatedAt?: Date;
+  createdAt?: Date;
+}
+
+export interface Customer_Shipment {
+  id?: string;
+  C1_code: string;
+  Indeks?: string;
+  city: string;
+  addres: string;
+  Tlf: string;
+  email: string;
+  transpport_company: string;
+  closed: boolean;
+  main: boolean;
+  Customer_LegalInfo_id: string;
+  createdAt?: Date;
+  updatedat?: Date;
+}
+
+export interface Customer_Contract {
+  id?: string;
+  C1_code: string;
+  name: string;
+  contract_date: string;
+  closed: boolean;
+  type: SPMATNO_TYPES;
+  main: boolean;
+  Customer_LegalInfo_id?: string;
+  createdAt?: Date;
+  updatedat?: Date;
+}
+
+export interface Customer_Discount {
+  id?: string;
+  C1_code: string;
+  discount: number;
+  closed: boolean;
+  contract_id: string;
+  createdAt?: Date;
+  updatedat?: Date;
+}
+
+export interface Customer_Bank {
+  id?: string;
+  Raschet_schet_bank: string;
+  Korr_schet_bank: string;
+  BIK_bank: string;
+  Name_bank: string;
+  Customer_LegalInfo_id: string;
+  createdAt?: Date;
+  updatedat?: Date;
+}
+
+export interface Customer_Info extends Customer_LegalInfo {
+  Customer_Contract: Customer_Contract[];
+  Customer_Bank: Customer_Bank[];
+  Customer_Discount: Customer_Discount[];
+  Customer_Shipment: Customer_Shipment[];
+}
+import { type Tool } from './product_repair.types';
+export enum REPAIR_STATUS {
+  ACCEPTION,
+  IN_WORK,
+  APPROVED,
+}
 export interface Repair_Main_type {
   id: string;
   type: Repair_types;
@@ -16,13 +96,20 @@ export interface Repair_Main_type {
   pending?: boolean;
   pending_in?: Date;
   pending_out?: Date;
+
   apprvoal?: boolean;
   approval_in?: Date;
   approval_out?: Date;
+
+  cli_apprvoal?: boolean;
+  cli_approval_in?: Date;
+  cli_approval_out?: Date;
+
   completed?: Date;
   issued?: Date;
   visible?: boolean;
   customer_JSON?: Customer_Info;
+  status: REPAIR_STATUS;
   closed?: boolean;
   closedAt?: Date;
   createdAt?: Date;
