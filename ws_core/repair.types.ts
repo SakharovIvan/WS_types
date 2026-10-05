@@ -77,6 +77,7 @@ export interface Customer_Info extends Customer_LegalInfo {
 }
 import { type Tool } from './product_repair.types';
 export enum REPAIR_STATUS {
+  DEFAULT,
   ACCEPTION,
   IN_WORK,
   APPROVED,
