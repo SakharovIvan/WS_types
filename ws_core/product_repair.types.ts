@@ -1,4 +1,4 @@
-import {type  Repair_Main_type } from './repair.types';
+import { type Repair_Main_type } from './repair.types';
 
 export interface Tool {
   id: string;
@@ -7,6 +7,7 @@ export interface Tool {
   serial_number_extra: string;
   checked: boolean;
   purchase: Date;
+  scheme: string;
   manufacture: Date;
   //repairs: Repair_Main_type[];
   purchaser: Purchaser;
