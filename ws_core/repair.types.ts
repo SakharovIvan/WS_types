@@ -213,3 +213,30 @@ export interface Repair_Period {
 export enum BUH {
   NDS = 0.22,
 }
+
+export type Repair_types_option = {
+  tool_exchange_for_tool: boolean;
+  tool_exchange: boolean;
+  cli_approval: boolean;
+  approval: boolean;
+};
+export const Repair_Options_list: Repair_types_option[] = [
+  {
+    tool_exchange_for_tool: false,
+    tool_exchange: false,
+    cli_approval: false,
+    approval: false,
+  },
+  {
+    tool_exchange_for_tool: false,
+    tool_exchange: true,
+    cli_approval: false,
+    approval: true,
+  },
+  {
+    tool_exchange_for_tool: false,
+    tool_exchange: false,
+    cli_approval: false,
+    approval: true,
+  },
+];
