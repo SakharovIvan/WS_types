@@ -148,7 +148,10 @@ export interface Repair_dates_filter {
 }
 
 export interface Repair_Main_type_filter
-  extends Repair_Main_type, Repair_dates_filter {}
+  extends Repair_Main_type, Repair_dates_filter {
+  limit;
+  offset;
+}
 
 export interface Repair_Mat_No {
   mat_No_id: string;
