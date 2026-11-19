@@ -1,5 +1,14 @@
 import { type Repair_Main_type } from './repair.types';
 
+export enum WarrantyTypes {
+  DEFAULT,
+  MCTREGISTERED,
+  SERVICE360,
+  SERVICE360_ADDITIONAL,
+}
+
+export const WarrantyTypes_Months = [36, 60, 12, 18];
+
 export interface Tool {
   id: string;
   Mat_no: string;
@@ -9,6 +18,8 @@ export interface Tool {
   purchase: Date;
   scheme: string;
   manufacture: Date;
+  warrantyType: WarrantyTypes;
+  warranty_period_end_date: Date;
   //repairs: Repair_Main_type[];
   purchaser: Purchaser;
   seller: Seller;
