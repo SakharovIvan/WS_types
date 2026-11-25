@@ -13,7 +13,9 @@ export interface Tool {
   id: string;
   Mat_no: string;
   serial_number: string;
+  nfc: string;
   serial_number_extra: string;
+  client_serial_number: string;
   checked: boolean;
   purchase: Date;
   scheme: string;
